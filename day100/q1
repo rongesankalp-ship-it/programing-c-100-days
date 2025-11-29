@@ -1,0 +1,25 @@
+//Use pointer to struct to modify and display data using -> operator.
+#include <stdio.h>
+
+struct Employee {
+    int id;
+    char name[50];
+    float salary;
+};
+
+int main() {
+    struct Employee emp;        // normal structure variable
+    struct Employee *ptr;       // pointer to structure
+
+    ptr = &emp;                 // store address of structure
+
+    // Modify data using -> operator
+    printf("Enter Employee ID: ");
+    scanf("%d", &ptr->id);
+
+    printf("Enter Employee Name: ");
+    scanf("%s", ptr->name);
+
+    printf("Enter Salary: ");
+    scanf("%f", &ptr->sala
+
