@@ -1,0 +1,47 @@
+//Return a structure containing top student's details from a function.
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int marks;
+};
+
+// Function to find and return the student with highest marks
+struct Student findTopStudent(struct Student s[], int n) {
+    int maxIndex = 0;
+
+    for(int i = 1; i < n; i++) {
+        if(s[i].marks > s[maxIndex].marks) {
+            maxIndex = i;
+        }
+    }
+
+    return s[maxIndex];   // return structure
+}
+
+int main() {
+    int n;
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    struct Student students[n];
+
+    // Input students
+    for(int i = 0; i < n; i++) {
+        printf("\nEnter name of student %d: ", i + 1);
+        scanf("%s", students[i].name);
+
+        printf("Enter marks of %d: ", i + 1);
+        scanf("%d", &students[i].marks);
+    }
+
+    // Get top student by returning structure
+    struct Student topper = findTopStudent(students, n);
+
+    // Display result
+    printf("\nTop Student Details:\n");
+    printf("Name  : %s\n", topper.name);
+    printf("Marks : %d\n", topper.marks);
+
+    return 0;
+}
