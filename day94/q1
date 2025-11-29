@@ -1,0 +1,35 @@
+//Write a function that accepts a structure as parameter and prints its members.
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int age;
+    float marks;
+};
+
+// Function that accepts structure as parameter
+void printStudent(struct Student s) {
+    printf("\nStudent Details:\n");
+    printf("Name  : %s\n", s.name);
+    printf("Age   : %d\n", s.age);
+    printf("Marks : %.2f\n", s.marks);
+}
+
+int main() {
+    struct Student st;
+
+    // Taking input
+    printf("Enter name: ");
+    scanf("%s", st.name);
+
+    printf("Enter age: ");
+    scanf("%d", &st.age);
+
+    printf("Enter marks: ");
+    scanf("%f", &st.marks);
+
+    // Passing structure to function
+    printStudent(st);
+
+    return 0;
+}
